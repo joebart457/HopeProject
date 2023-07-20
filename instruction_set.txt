@@ -1,0 +1,24 @@
+The following is a complete list of supported instructions for the Hope Assembly Language.
+
+add,mul,div,sub    *pops the last two values from the value stack and performs the corresponding operation on them
+		   - the result is stored on the stack.
+
+//add,mul,div,sub  location 
+//		  *pops the last two values from the value stack and performs the corresponding operation on them
+//		   - the result is stored in the memory location specified by location
+// CANNOT DO THIS YET, NEED A WAY OF ALIASING VALUES (LIKE REGISTERS)
+
+gt,lt,gte,lte, eq, neq *pops the last two values from the value stack and performs the corresponding operation on them
+			- the result is a boolean stored on the stack
+
+jmp location		*jumps to the corresponding location within the instruction data segment
+jz location		*same as jmp but first pops the last value from the stack and tests if it is equal to zero, if not, it will do nothing
+jnz location		* same as jz but tests if the value is not equal to zero
+
+const unique_identifier *loads entry corresponding to unique_identifier from the constants table into the stack
+fetch unique_identifier *fetches the value located at unique_identifier from memory and loads it into the stack
+
+
+EXTENDED INSTRUCTIONS
+
+call
