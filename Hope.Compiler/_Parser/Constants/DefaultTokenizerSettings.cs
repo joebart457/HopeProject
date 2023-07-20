@@ -13,7 +13,7 @@ namespace Hope.Compiler._Parser.Constants
         public static Tokenizer Default { get
             {
                 var settings = TokenizerSettings.Default;
-                settings.WordIncluded = "@`";
+                settings.WordIncluded = "@`.$";
                 var rules = new List<TokenizerRule>()
                 {
                     new TokenizerRule(TokenTypes.pop, "pop", ignoreCase: true),

@@ -186,6 +186,7 @@ namespace Hope.Compiler.Models
             uint offset = 0;
             foreach(var symbol in _symbols)
             {
+                translatedSymbols.Add(symbol, offset);
                 _stream.Write(symbol.Length.ToBytes());
                 offset += 4;
                 _stream.Write(symbol.ToBytes());

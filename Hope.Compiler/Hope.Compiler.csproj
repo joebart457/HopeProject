@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="CliLogger" Version="2.0.1" />
-    <PackageReference Include="CliParser" Version="2.0.2" />
+    <PackageReference Include="CliParser" Version="2.1.0" />
     <PackageReference Include="ParserLite" Version="1.3.2" />
     <PackageReference Include="TokenizerCore" Version="1.1.1" />
   </ItemGroup>

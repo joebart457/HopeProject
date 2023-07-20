@@ -261,8 +261,6 @@ inline TyData vm::pop_stack()
 }
 
 
-
-
 inline std::string vm::read_string(std::istream& iss)
 {
 	uint32_t length = read_as<uint32_t>(iss);
@@ -274,7 +272,6 @@ inline std::string vm::read_string(std::istream& iss)
 	if (bytesRead != length) throw std::exception("unable to read memory");
 	return data;
 }
-
 
 // Instructions
 

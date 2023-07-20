@@ -56,6 +56,7 @@ template<class Ty>
 inline void Stor<Ty>::put(Ty key, std::any& val)
 {
 	check_scope();
+	_currentScope->put(key, val);
 }
 
 template<class Ty>

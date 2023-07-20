@@ -10,7 +10,7 @@ using Logger;
 [Entry("ch")]
 class Startup
 {
-    [Command("do")]
+    [Command]
     public void Compile(string filename, string outputFileName)
     {
         var builder = new RuleBuilder();
@@ -54,7 +54,7 @@ class Startup
         var settings = new CompilerSettings(filename, outputFileName, builder.GetRules());
         var compiler = new Compiler();
         compiler.Compile(settings);
-        Logger.CliLogger.LogSuccess($"{filename} -> {outputFileName}");
+        CliLogger.LogSuccess($"{filename} -> {outputFileName}");
     }
 }
 
@@ -63,8 +63,8 @@ class Program
     static void Main(string[] args)
     {
 #if DEBUG
-        args = new string[] { "do", "test.txt", "out" };
+        args = new string[] { "test.txt", "out" };
 #endif
-        args.ResolveWithTryCatch(new Startup(), (ex) =>  CliLogger.LogError($"err: {ex.Message}"));
+        args.ResolveWithTryCatch(new Startup(), (ex) =>  CliLogger.LogError($"err: {ex.Message} {(ex.InnerException?.Message ?? "")}"));
     }
 }

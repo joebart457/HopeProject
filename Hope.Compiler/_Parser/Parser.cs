@@ -17,7 +17,7 @@ namespace Hope.Compiler._Parser
         private void Init(string fileName)
         {
             string data = File.ReadAllText(fileName);
-            var tokens = _tokenizer.Tokenize(data).Where(x => x.Type != TokenTypes.Comma);
+            var tokens = _tokenizer.Tokenize(data).Where(x => x.Type != TokenTypes.Comma && x.Type != TokenTypes.EndOfFile);
             Initialize(tokens.ToList());
         }
 

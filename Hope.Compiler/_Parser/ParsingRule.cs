@@ -47,7 +47,9 @@ namespace Hope.Compiler._Parser
                 }
                 else if (rule.Type == ArgumentType.FunctionIdentifier)
                 {
-                    var funcIdentifier = parser.Consume(TokenTypes.String, "expect a function identifier").Lexeme;
+                    string funcIdentifier = "";
+                    if (parser.PeekMatch(0, TokenTypes.Word)) funcIdentifier = parser.Consume(TokenTypes.Word, "expect a function identifier").Lexeme;
+                    else funcIdentifier = parser.Consume(TokenTypes.String, "expect a function identifier").Lexeme;
                     rule.FillProperty(ins, funcIdentifier);
                 }
                 else if (rule.Type == ArgumentType.ConstantValue)
@@ -55,6 +57,7 @@ namespace Hope.Compiler._Parser
                     var token = parser.Current();
                     parser.Advance();
                     rule.FillProperty(ins, token);
+
                 }
                 else throw new Exception($"unsupported argument type {rule.Type}");
             }
