@@ -30,6 +30,8 @@ namespace Hope.Compiler._Parser.Constants
         public const string fetch = "fetch";
         public const string push_const = "const";
         public const string end = "end";
+        public const string push_scope = "push_scope";
+        public const string pop_scope = "pop_scope";
 
         public const string label = "label";
 

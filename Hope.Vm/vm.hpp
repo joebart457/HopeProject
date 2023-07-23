@@ -8,7 +8,7 @@
 
 #include "args.hpp"
 
-#define TY_KEY int32_t
+#define TY_KEY uint32_t
 
 template <class Ty>
 class Stor;
@@ -67,6 +67,8 @@ private:
 	int jnz(std::istream& iss);
 	int call(std::istream& iss);
 	int end(std::istream& iss);
+	int push_scope(std::istream& iss);
+	int pop_scope(std::istream& iss);
 
 	int execute_instruction(std::istream& iss);
 
@@ -192,6 +194,12 @@ inline int vm::execute_instruction(std::istream& iss)
 	}
 	if (instruction == INS_END) {
 		return end(iss);
+	}
+	if (instruction == INS_PUSH_SCOPE) {
+		return push_scope(iss);
+	}
+	if (instruction == INS_POP_SCOPE) {
+		return pop_scope(iss);
 	}
 
 	return -1;
@@ -508,6 +516,18 @@ inline int vm::end(std::istream& iss)
 	int rc = pop_stack<int32_t>();
 	_exitRequested = true;
 	return rc;
+}
+
+inline int vm::push_scope(std::istream& iss) 
+{
+	_stor->push_scope();
+	return 0;
+}
+
+inline int vm::pop_scope(std::istream& iss) 
+{
+	_stor->pop_scope();
+	return 0;
 }
 
 

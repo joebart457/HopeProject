@@ -20,6 +20,9 @@ public:
 		(*stdlib)[2] = std::make_shared<native_fn>("Console.LogInt", Console_Log_Int)
 			->registerParameter<int32_t>("msg");
 
+		(*stdlib)[3] = std::make_shared<native_fn>("Fs.Exists", FileSystem_Exists)
+			->registerParameter<int32_t>("msg");
+
 		return stdlib;
 	}
 

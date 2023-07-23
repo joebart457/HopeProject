@@ -24,3 +24,7 @@
 #define INS_CONST 16
 #define INS_FETCH 17
 #define INS_END   18
+
+
+#define INS_PUSH_SCOPE   20
+#define INS_POP_SCOPE    21

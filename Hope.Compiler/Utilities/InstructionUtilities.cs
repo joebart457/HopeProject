@@ -31,6 +31,8 @@ namespace Hope.Compiler.Utilities
             {"const", 16},
             {"fetch", 17},
             {"end", 18},
+            {"push_scope", 20},
+            {"pop_scope", 21},
         };
 
         private static Dictionary<string, int> _dataTypes = new()
@@ -44,6 +46,7 @@ namespace Hope.Compiler.Utilities
         {
             {"Console.Log", 1},
             {"Console.LogInt", 2},
+            {"Fs.Exists", 3},
         };
         public static int TranslateInstruction(string instruction)
         {

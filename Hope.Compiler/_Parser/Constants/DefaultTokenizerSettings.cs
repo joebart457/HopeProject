@@ -35,6 +35,8 @@ namespace Hope.Compiler._Parser.Constants
                     new TokenizerRule(TokenTypes.label, "label", ignoreCase: true),
                     new TokenizerRule(TokenTypes.push_const, "const", ignoreCase: true),
                     new TokenizerRule(TokenTypes.end, "end", ignoreCase: true),
+                    new TokenizerRule(TokenTypes.push_scope, "push_scope", ignoreCase: true),
+                    new TokenizerRule(TokenTypes.pop_scope, "pop_scope", ignoreCase: true),
                     new TokenizerRule(TokenTypes.Comma, ","),
                     new TokenizerRule(TokenTypes.SemiColon, ";"),
                     new TokenizerRule(TokenTypes.EndOfLineComment, ";"),

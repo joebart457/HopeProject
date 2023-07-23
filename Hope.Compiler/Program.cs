@@ -46,6 +46,8 @@ class Startup
         builder.Register<SingularInstruction>(TokenTypes.eq );
         builder.Register<SingularInstruction>(TokenTypes.neq);
         builder.Register<SingularInstruction>(TokenTypes.end);
+        builder.Register<SingularInstruction>(TokenTypes.push_scope);
+        builder.Register<SingularInstruction>(TokenTypes.pop_scope);
 
         builder.Register<LabelInstruction>(TokenTypes.label)
             .WithArgument<LabelInstruction>(ArgumentType.CodeLabel, x => x.Label);

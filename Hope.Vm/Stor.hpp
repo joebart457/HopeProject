@@ -92,7 +92,7 @@ inline void Stor<Ty>::check_scope()
 template<class Ty>
 inline std::any Stor<Ty>::get_helper(Ty key, size_t index)
 {
-	if (index >= _scopes.size()) throw std::exception("key not found in stack");
+	if (index >= _scopes.size()) throw std::exception("key not found in scope");
 	if (_scopes.at(index)->exists(key)) return _scopes.at(index)->get(key);
 	return get_helper(key, index - 1);
 }
