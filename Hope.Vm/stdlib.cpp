@@ -1,5 +1,6 @@
 #include "stdlib.hpp"
 #include <filesystem>
+#include <iostream>
 
 std::any Console_Log(_args args) {
 	auto msg = args.get<std::string>(0);
